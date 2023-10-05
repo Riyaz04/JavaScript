@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color: antiquewhite;
+    }
+    
+    p {
+        font-weight: bold;
+    }
+    
+    #btn {
+        color: rebeccapurple;
+        border-color: blue;
+        background-color: aquamarine;
+    }
+    
+    .main {
+        text-align: center;
+        margin-top: 40%;
+        font-size: x-large;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div>
+            <p>Want to start and stop me🙋‍♂️</p>
+            <br />
+            <button id="btn">start</button>
+            <button type="" id="btn1">stop</button>
+        </div>
+    </div>
+</body>
+<script>
+    const stopNum = document.querySelector('p')
+
+    const btn = document.querySelector('#btn')
+    const stopInteval = document.querySelector('#btn1')
+
+    let timeRef
+    let num = 0
+
+    const showMyName = () => {
+        stopNum.innerHTML = 'Loading.....🔃'
+
+        timeRef = setInterval(() => {
+            stopNum.innerHTML = `${num}`
+            num++
+        }, 1000)
+    }
+
+    btn.addEventListener('click', showMyName)
+    stopInteval.addEventListener('click', () => {
+        clearInterval(timeRef)
+    })
+</script>
+
+</html>

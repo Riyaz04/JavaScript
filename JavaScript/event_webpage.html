@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+</head>
+<style>
+    body {
+        background-color: rgba(69, 110, 213, 0.511);
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    span {
+        padding: 30px;
+        background-color: aqua;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+    }
+    
+    .button {
+        padding: 60px;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .content {
+        padding-top: 45px;
+        padding-bottom: 20px;
+    }
+    
+    a,
+    .text {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <h1>There is Events are runnig</h1>
+    <div class="button">
+        <a href="#" onclick="alert('I am osm but no one use me')">
+            <span class="text">Simple inline event</span>
+        </a>
+    </div>
+    <div class="button">
+        <a href="#" onclick="callingFunction()">
+            <span class="text">CallingFunction</span>
+        </a>
+    </div>
+    <div class="button">
+        <a href="#" id="thirdway">
+            <span class="text">Inline event call</span>
+        </a>
+    </div>
+    <div class="button">
+        <a href="#" id="fourtway">
+            <span class="text">Event listner</span>
+        </a>
+    </div>
+    <div class="button">
+        <a href="#" id="eventobj">
+            <span class="text">Event Objects</span>
+        </a>
+    </div>
+</body>
+<script>
+    <!-- 2n way to writing event  -->
+    const callingFunction = () => {
+            alert('most common way of writing function event')
+        }
+        //3rd way to call event
+    const thirdway = document.getElementById('thirdway');
+    thirdway.onclick = function() {
+            alert('most common way of writing function event')
+        }
+        //4th way of event listner
+    const fourtway = document.querySelector('#fourtway');
+    fourtway.addEventListener('click', () => {
+        alert('bss ho gya bhai')
+    })
+
+    // event object
+    const object = document.querySelector('eventobj');
+    const checkEvent = () => {
+        alert('hum dekh rhe hai event object ko');
+        console.log(event);
+        console.log(event.target);
+        console.log(event.type);
+    }
+
+    eventobj.addEventListener('click', checkEvent);
+</script>
+
+</html>
